@@ -1,4 +1,14 @@
-#include<stdio.h>
+/*
+	demo.c - Demo example for LED APA SPI for Raspberry PI
+	
+	Authors:	
+	Mirko Mancin - mirko.mancin@gmail.com
+	Marco Mambiarni - marco.mambriani1@gmail.com
+	
+	Created on 16/12/2014
+*/
+
+#include <stdio.h>
 #include <wiringPiSPI.h>
 #include <string.h>
 #include <stdlib.h>
@@ -20,6 +30,7 @@ int num_state[4];
 
 int main()
 {
+	 //SPI Parameter
      int chan=1;
      int speed=512000;
      int i;
@@ -35,8 +46,9 @@ int main()
      printf("When ready hit enter.\n");
      (void) getchar();// remove the CR
 
+	 //prepare buffer with begin and end byte for SPI Led controller - check datasheet for more information
      initBuff();
-     printf("- 'a' demo alternato\n");
+     printf("- 'a' demo alternate\n");
      printf("- 'r' red\n");
      printf("- 'g' green\n");
      printf("- 'b' blue\n");
